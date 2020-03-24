@@ -1,16 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# voyage-logbook
+Diário de Bordo da Viagem Intergaláctica. 
 
-## Available Scripts
 
-In the project directory, you can run:
+## Scripts Disponíveis
+
+Dentro do diretório do projeto, você pode rodar:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Roda a aplicação em modo de desenvolvimento.<br />
+Abra [http://localhost:3000](http://localhost:3000) para visualizá-la no navegador.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+A página irá atualizar sozinha quando você fizer alterações.<br />
+E você também poderá ver erros encontrados no console.
 
 ### `yarn test`
 
