@@ -3,6 +3,7 @@
 import React from 'react'
 // Style
 import '../../theme/styles/easter-egg.css'
+// Material UI
 import { Grid } from '@material-ui/core'
 
 const EasterEgg = () => {

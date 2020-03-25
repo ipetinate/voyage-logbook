@@ -70,8 +70,8 @@ export default function AddPlanets () {
               ref={register({ required: true })}
             >
               {
-                planets.map(planet =>
-                  <MenuItem key={planet} value={planet}>{planet.name}</MenuItem>
+                planets.map((planet, index) =>
+                  <MenuItem key={index} value={planet}>{planet.name}</MenuItem>
                 )
               }
             </Select>
@@ -85,7 +85,7 @@ export default function AddPlanets () {
       </form>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12}>
-          {/* {plans.map(x => <PlanItem key={x} planet={x.planet} description={x.description} />)} */}
+          {/* {plans.map((x, index) => <PlanItem key={index} planet={x.planet} description={x.description} />)} */}
         </Grid>
       </Grid>
     </>

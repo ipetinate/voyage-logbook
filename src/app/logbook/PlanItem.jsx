@@ -28,7 +28,7 @@ export default function PlanItem (props) {
             Planeta: {props.planet.name}
           </Typography>
           <Typography>
-            Descroção: {props.description}
+            Descrição: {props.description}
           </Typography>
         </Paper>
       </Grid>
