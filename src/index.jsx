@@ -8,14 +8,14 @@ import {
 } from 'react-router-dom'
 // Material UI
 import ThemeProvider from '@material-ui/styles/ThemeProvider'
-// App
+// App Components
 import App from './app/App'
-import About from './app/components/About'
-import NewLogbook from './logbook/new/NewLogbook'
-import Logbook from './logbook/Logbook'
+import Logbook from './app/logbook/Logbook'
 import NotFound from './app/components/NotFound'
+import EasterEgg from './app/components/EasterEgg'
 // Styles
-import './index.css'
+import './theme/styles/index.css'
+import './theme/styles/star-wars-bg.css'
 // Others
 import * as serviceWorker from './serviceWorker'
 import theme from './theme/material-ui.theme'
@@ -24,11 +24,10 @@ ReactDOM.render(
   <ThemeProvider theme={theme}>
     <Router>
       <Switch>
-        <Route path="/" exact={true} component={App}></Route>
-        <Route path="/new-logbook" exact={true} component={NewLogbook}></Route>
-        <Route path="/logbook" exact={true} component={Logbook}></Route>
-        <Route path="/about" exact={true} component={About}></Route>
-        <Route path="*" component={NotFound}></Route>
+        <Route path='/' exact component={App} />
+        <Route path='/logbook' exact component={Logbook} />
+        <Route path='/easter-egg' exact component={EasterEgg} />
+        <Route path='*' component={NotFound} />
       </Switch>
     </Router>
   </ThemeProvider>,

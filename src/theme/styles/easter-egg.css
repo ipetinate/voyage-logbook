@@ -1,0 +1,143 @@
+body {
+  background: url(https://i.ytimg.com/vi/JquobII5VjA/maxresdefault.jpg);
+  background-size: cover;
+  position: relative;
+  font-family: 'Open Sans', sans serif;
+}
+
+#starwars {
+  position: relative;
+  padding-top: 300px;
+  height: 100%;
+  width: 100%;
+}
+
+.animate .intro {
+  font-size: 250%;
+  color: #19A3C8;
+  width: 578px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: intro 5s linear 0s;
+  opacity: 0;
+}
+.animate .logo {
+  position: absolute;
+  width: 0;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: logo  10s linear 5s;
+  opacity: 0;
+}
+.animate #reel {
+  width: 580px;
+  margin-left: -290px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 100em;
+  overflow: hidden;
+  transform: perspective(255px) rotateX(30deg);
+  transform-origin: 50% 100%;
+  color: #FFEC01;
+  font-weight: bold;
+  font-size: 250%;
+  text-align: justify;
+}
+.animate #reel div {
+  position: absolute;
+  top: 100%;
+  animation: reel 53s linear 12s;
+}
+.animate #reel div p {
+  line-height: 1.5em;
+  margin-top: 50px;
+}
+.animate #reel div p:first-child {
+  margin-top: 0;
+}
+.animate #reel div h1, .animate #reel div h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.animate button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  background: none;
+  border: 0;
+  font-weight: bold;
+  color: #FFEC01;
+  opacity: 1;
+  cursor: pointer;
+  animation: reset  66s linear;
+}
+
+@keyframes reel {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes logo {
+  0% {
+    width: 300px;
+    opacity: 1;
+  }
+  10% {
+    width: 300px;
+    opacity: 1;
+  }
+  15% {
+    width: 300px;
+  }
+  90% {
+    width: 10px;
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+@keyframes reset {
+  0% {
+    opacity: 0;
+    cursor: default;
+  }
+  99% {
+    opacity: 0;
+    cursor: default;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
