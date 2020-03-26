@@ -96,7 +96,7 @@ const AppToolbar = (props) => {
       <Grid>
         <AppBar position='static' color='primary' className={classes.appBar}>
           <Toolbar id='back-to-top-anchor'>
-            <IconButton to='/' component={Link} edge='start' color='inherit' aria-label='open drawer'>
+            <IconButton name='homeIconButton' to='/' component={Link} edge='start' color='inherit' aria-label='open drawer'>
               <Avatar src={logo} alt='Spaceship' />
             </IconButton>
             <Typography className={classes.title} variant='h6' noWrap>
@@ -114,11 +114,9 @@ const AppToolbar = (props) => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <Link to='/'>
-              <MenuItem onClick={handleClose}>Página Inicial</MenuItem>
-            </Link>
+            <Link to='/' name='homePageLink' onClick={() => handleClose}>Página Inicial</Link>
             <Link to='/about'>
-              <MenuItem onClick={handleClose}>Sobre</MenuItem>
+              <MenuItem name='easterEggLink' onClick={() => handleClose}>Pra que serve esse link?</MenuItem>
             </Link>
           </Menu>
         </AppBar>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import './App.css'
 import '../theme/styles/space.css'
 // Files/Images
-import spaceship from '../assets/icons/spaceship.svg'
+import spaceship from '../assets/img/m-falcon.png'
 // Material UI
 import AddIcon from '@material-ui/icons/Add'
 import Button from '@material-ui/core/Button'

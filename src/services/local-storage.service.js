@@ -6,7 +6,7 @@ export default class LocalStorageService {
   }
 
   create (key, value) {
-    if (isObject(value)) {
+    if (isObject(value) || Array.isArray(value)) {
       value = this.objectSerialize(value)
     }
 
@@ -46,10 +46,12 @@ export default class LocalStorageService {
   }
 
   objectSerialize (value) {
-    if (!isObject(value)) {
-      return value
-    }
+    if (!isObject(value)) return
 
-    return JSON.stringify(value)
+    try {
+      return JSON.stringify(value)
+    } catch (e) {
+      console.err('This object can\'t be serialized.')
+    }
   }
 }

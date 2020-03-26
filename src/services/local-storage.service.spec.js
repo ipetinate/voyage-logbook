@@ -9,8 +9,8 @@ describe('LocalStorageService', () => {
   })
 
   test('Deve criar um item no localStorage com chave e valor', () => {
-    const KEY = 'foo'
-    const VALUE = 'bar'
+    const KEY = 'CHAVE'
+    const VALUE = 'VALOR'
 
     service.create(KEY, VALUE)
 

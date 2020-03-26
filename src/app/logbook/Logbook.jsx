@@ -13,7 +13,6 @@ import Copyright from '../components/Copyright'
 import AppToolbar from '../components/AppToolbar'
 import AddPlanets from './AddPlanets'
 import CheckPlan from './CheckPlan'
-import List from './List'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -97,7 +96,7 @@ export default function Checkout () {
           </Stepper>
           <>
             {activeStep === steps.length ? (
-              <List />
+              <div>Lista</div>
             ) : (
               <>
                 {getStepContent(activeStep)}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 // Styles
 import '../App.css'
 // Files/Images
-import spaceship from '../../assets/icons/spaceship.svg'
+import notFound from '../../assets/img/404.png'
 // Material UI
 import Button from '@material-ui/core/Button'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
@@ -24,9 +24,9 @@ const NotFound = () => {
           color='primary'
         >
           <ArrowBackIcon />
-          &nbsp; Voltar a página inicial
+          &nbsp; Voltar ao início
         </Button>
-        <img src={spaceship} className='App-logo' alt='logo' />
+        <img src={notFound} alt='logo' />
       </header>
     </div>
   )
