@@ -26,8 +26,9 @@
 - Todos os dados dos planos são adicionados ao ``window.localStorage`` no Navegador, permitindo que você saia da aplicação e seus dados continuem lá, até que a limpeza dos dados de navegação ou remoção manual seja feita.
 
 ## Tecnologias
+- React + Material UI + PWA + AXIOS
 
-![MaterialUI](https://github.com/ipetinate/voyage-logbook/blob/master/doc/img/mui.jpg) ![React](https://github.com/ipetinate/voyage-logbook/blob/master/doc/img/react.jpg)  ![PWA](https://github.com/ipetinate/voyage-logbook/blob/master/doc/img/pws.jpg)
+![MaterialUI](https://github.com/ipetinate/voyage-logbook/blob/master/doc/img/mui.jpg) ![React](https://github.com/ipetinate/voyage-logbook/blob/master/doc/img/react.png)  ![PWA](https://github.com/ipetinate/voyage-logbook/blob/master/doc/img/pwa.jpg)
 
 ## Scripts Disponíveis
 
