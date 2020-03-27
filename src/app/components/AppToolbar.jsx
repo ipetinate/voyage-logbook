@@ -114,9 +114,11 @@ const AppToolbar = (props) => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <Link to='/' name='homePageLink' onClick={() => handleClose}>Página Inicial</Link>
-            <Link to='/about'>
-              <MenuItem name='easterEggLink' onClick={() => handleClose}>Clique aqui! :D</MenuItem>
+            <Link to='/' onClick={() => handleClose}>
+              <MenuItem>Página Inicial</MenuItem>
+            </Link>
+            <Link to='/about' onClick={() => handleClose}>
+              <MenuItem>Clique aqui! :D</MenuItem>
             </Link>
           </Menu>
         </AppBar>
