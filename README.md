@@ -1,9 +1,6 @@
 
 # Voyage Logbook Reports
 
-- Diário de Bordo da Viagem Intergaláctica.
-
-
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9576dd88-4570-464e-95ae-eef695f6b0e5/deploy-status)](https://app.netlify.com/sites/voyage-logbook/deploys) ![Build and Deploy](https://github.com/ipetinate/voyage-logbook/workflows/Build%20and%20Deploy/badge.svg?branch=master)
 
