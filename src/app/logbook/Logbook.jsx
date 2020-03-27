@@ -1,13 +1,14 @@
 import React from 'react'
 // Material UI
 import { makeStyles } from '@material-ui/core/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Paper from '@material-ui/core/Paper'
-import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
-import StepLabel from '@material-ui/core/StepLabel'
+import Link from '@material-ui/core/Link'
+import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
+import Stepper from '@material-ui/core/Stepper'
+import StepLabel from '@material-ui/core/StepLabel'
 import Typography from '@material-ui/core/Typography'
+import CssBaseline from '@material-ui/core/CssBaseline'
 // App Components
 import Copyright from '../components/Copyright'
 import AppToolbar from '../components/AppToolbar'
@@ -96,7 +97,12 @@ export default function Checkout () {
           </Stepper>
           <>
             {activeStep === steps.length ? (
-              <div>Lista</div>
+              <div>
+                <Typography>
+                  Muito obrigado por utilizar o Voyage Logbook Reports {'<3'}
+                </Typography>
+                <Button component={Link} to='/' />
+              </div>
             ) : (
               <>
                 {getStepContent(activeStep)}

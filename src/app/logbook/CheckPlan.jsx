@@ -6,7 +6,6 @@ import ListItem from '@material-ui/core/ListItem'
 import Typography from '@material-ui/core/Typography'
 import ListItemText from '@material-ui/core/ListItemText'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListSubheader from '@material-ui/core/ListSubheader'
 import LabelImportantIcon from '@material-ui/icons/LabelImportant'
 import { makeStyles } from '@material-ui/core/styles'
 // App Resources
