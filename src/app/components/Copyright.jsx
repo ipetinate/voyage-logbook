@@ -1,7 +1,10 @@
 import React from 'react'
 // Material UI
-import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import IconButton from '@material-ui/core/IconButton'
+import Typography from '@material-ui/core/Typography'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
 
 export default function Copyright () {
   return (
@@ -11,6 +14,13 @@ export default function Copyright () {
       </Link>
       <br />
       {'Copyright © 2020'}
+      <br />
+      <IconButton href='https://github.com/ipetinate/voyage-logbook' target='_blank'>
+        <GitHubIcon />
+      </IconButton>
+      <IconButton href='https://linkedin.com/in/ipetinate' target='_blank'>
+        <LinkedInIcon />
+      </IconButton>
     </Typography>
   )
 }
