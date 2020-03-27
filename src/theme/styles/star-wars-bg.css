@@ -1,0 +1,6 @@
+.sw-bg {
+  background-image: url(../../assets/img/sw-bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}

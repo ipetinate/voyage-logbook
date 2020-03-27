@@ -1,27 +1,43 @@
-import React from 'react';
+import React from 'react'
+// React Router
+import { Link } from 'react-router-dom'
+// Styles
+import './App.css'
+import '../theme/styles/space.css'
+// Files/Images
+import spaceship from '../assets/img/m-falcon.png'
+// Material UI
+import AddIcon from '@material-ui/icons/Add'
+import Button from '@material-ui/core/Button'
 
-import './App.css';
-import logo from '../assets/logo.svg';
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className='stars' />
+      <div className='twinkling' />
+      <div className='clouds' />
+      <div className='App'>
+        <header className='App-header over'>
+          <h3 className='over'>Voyage Logbook Reports</h3>
+          <p className='over'>
+            Olá, seja bem vindo ao gerador de relatórios para Diário de Bordo de viagem.
+          </p>
+          <img src={spaceship} className='App-logo' alt='logo' />
+          <Button
+            className='over'
+            component={Link}
+            to='/logbook'
+            variant='contained'
+            color='primary'
+          >
+            Criar relatório &nbsp;
+            <AddIcon />
+          </Button>
+        </header>
+
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App

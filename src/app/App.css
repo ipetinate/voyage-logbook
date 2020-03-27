@@ -1,15 +1,19 @@
 .App {
   text-align: center;
+  z-index: 5000;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  max-width: 30vh;
+  z-index: 5000;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    z-index: 5000;
   }
 }
 
@@ -22,10 +26,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  z-index: 5000;
 }
 
 .App-link {
   color: #61dafb;
+  z-index: 5000;
 }
 
 @keyframes App-logo-spin {
