@@ -1,19 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+// React Router DOM
+import { Link } from 'react-router-dom'
 // Material UI
-import { makeStyles } from '@material-ui/core/styles'
 import Step from '@material-ui/core/Step'
-import Link from '@material-ui/core/Link'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 import Stepper from '@material-ui/core/Stepper'
 import StepLabel from '@material-ui/core/StepLabel'
+import ArrowBack from '@material-ui/icons/ArrowBack'
+import GetAppIcon from '@material-ui/icons/GetApp'
 import Typography from '@material-ui/core/Typography'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import TouchAppIcon from '@material-ui/icons/TouchApp'
+import { makeStyles } from '@material-ui/core/styles'
 // App Components
 import Copyright from '../components/Copyright'
 import AppToolbar from '../components/AppToolbar'
 import AddPlanets from './AddPlanets'
 import CheckPlan from './CheckPlan'
+// Services
+import LocalStorageService from '../../services/local-storage.service'
+// Dictionaries
+import LOCAL_STORAGE_KEY from '../../dictionaries/local-storage.dictionary'
+// Functions
+import makeTextFile from '../../functions/make-text-file.function'
+import makeJsonFile from '../../functions/make-json-file.function'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -71,12 +82,36 @@ export default function Checkout () {
   const classes = useStyles()
   const [activeStep, setActiveStep] = React.useState(0)
 
+  const localStorageService = new LocalStorageService()
+  const KEY = LOCAL_STORAGE_KEY.get('KEY')
+
+  const [plans, setPlans] = useState([])
+
+  useEffect(() => {
+    setPlans(localStorageService.read(KEY) || [])
+  }, [])
+
   const handleNext = () => {
     setActiveStep(activeStep + 1)
   }
 
   const handleBack = () => {
     setActiveStep(activeStep - 1)
+  }
+
+  const handleTextToFile = () => {
+    let text = '>> Planos | Diário de Bordo - Relatório << \n\n'
+    plans.map(x => { text += `\n > ${x.description} em ${x.planet.name} \n` })
+    return text
+  }
+
+  const handleTextFileDownload = () => {
+    const text = handleTextToFile()
+    return makeTextFile(text)
+  }
+
+  const handleJsonFileDownload = () => {
+    return makeJsonFile(plans)
   }
 
   return (
@@ -101,7 +136,38 @@ export default function Checkout () {
                 <Typography>
                   Muito obrigado por utilizar o Voyage Logbook Reports {'<3'}
                 </Typography>
-                <Button component={Link} to='/' />
+                <br />
+                <Typography>
+                  <TouchAppIcon />
+                  &nbsp;&nbsp;Clique nos links abaixo para Exportar o relátorio
+                  <br />
+                  <Button
+                    variant='contained'
+                    color='primary'
+                    href={handleTextFileDownload()}
+                    download='plan-report'
+                    style={{ margin: '20px 10px' }}
+                  >
+                    Exportar para TXT
+                    <GetAppIcon />
+                  </Button>
+                  <Button
+                    variant='contained'
+                    color='secondary'
+                    href={handleJsonFileDownload()}
+                    download='plan-report'
+                  >
+                    Exportar para JSON
+                    <GetAppIcon />
+                  </Button>
+                </Typography>
+                <br />
+                <Typography>
+                  <Button component={Link} to='/'>
+                    <ArrowBack />
+                    Voltar ao Início
+                  </Button>
+                </Typography>
               </div>
             ) : (
               <>

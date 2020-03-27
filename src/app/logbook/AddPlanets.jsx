@@ -21,7 +21,10 @@ const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(2),
     textAlign: 'left',
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
+    backgroundColor: '#313131',
+    marginTop: '5px',
+    marginBottom: '5px'
   }
 }))
 
@@ -62,7 +65,7 @@ export default function AddPlanets () {
           ({ description, planet }) => addPlan({ description, planet })
         }
       />
-      <Grid container spacing={3}>
+      <Grid test-id='add-planet' container spacing={3}>
         <Grid item xs={12} sm={12}>
           {
             plans.map((plan, index) =>
