@@ -30,6 +30,10 @@
 
 ![MaterialUI](https://github.com/ipetinate/voyage-logbook/blob/master/doc/img/mui.jpg) ![React](https://github.com/ipetinate/voyage-logbook/blob/master/doc/img/react.png)  ![PWA](https://github.com/ipetinate/voyage-logbook/blob/master/doc/img/pwa.jpg)
 
+## Relatório da Análise do LightHouse
+
+![LightHouse Report](https://github.com/ipetinate/voyage-logbook/blob/master/doc/img/lighthouse.png)
+
 ## Scripts Disponíveis
 
 
