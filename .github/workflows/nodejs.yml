@@ -16,15 +16,12 @@ jobs:
           yarn install
           rm -rf build
           yarn build
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: 'build'
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v1
         with:
           name: build
           path: build
+
+      - name: Run Jest
+        uses: stefanoeb/jest-action@1.0.3
