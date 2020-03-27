@@ -1,80 +1,69 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
+import React, { useEffect, useState } from 'react'
+// Material UI
 import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
 import Grid from '@material-ui/core/Grid'
+import ListItem from '@material-ui/core/ListItem'
+import Typography from '@material-ui/core/Typography'
+import ListItemText from '@material-ui/core/ListItemText'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListSubheader from '@material-ui/core/ListSubheader'
+import LabelImportantIcon from '@material-ui/icons/LabelImportant'
+import { makeStyles } from '@material-ui/core/styles'
+// App Resources
+import LocalStorageService from '../../services/local-storage.service'
+// Dictionaries
+import LOCAL_STORAGE_KEY from '../../dictionaries/local-storage.dictionary'
 
-const products = [
-  { name: 'Product 1', desc: 'A nice thing', price: '$9.99' }
-]
-const addresses = ['1 Material-UI Drive', 'Reactville', 'Anytown', '99999', 'USA']
-const payments = [
-  { name: 'Card type', detail: 'Visa' }
-]
-
-const useStyles = makeStyles((theme) => ({
-  listItem: {
-    padding: theme.spacing(1, 0)
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper
   },
-  total: {
-    fontWeight: 700
-  },
-  title: {
-    marginTop: theme.spacing(2)
+  nested: {
+    paddingLeft: theme.spacing(4)
   }
 }))
 
 const CheckPlan = () => {
   const classes = useStyles()
 
+  const localStorageService = new LocalStorageService()
+  const KEY = LOCAL_STORAGE_KEY.get('KEY')
+
+  const [plans, setPlans] = useState([])
+
+  useEffect(() => {
+    setPlans(localStorageService.read(KEY) || [])
+  }, [])
+
   return (
-    <>
-      <Typography variant='h6' gutterBottom>
-        Order summary
-      </Typography>
-      <List disablePadding>
-        {products.map((product) => (
-          <ListItem className={classes.listItem} key={product.name}>
-            <ListItemText primary={product.name} secondary={product.desc} />
-            <Typography variant='body2'>{product.price}</Typography>
-          </ListItem>
-        ))}
-        <ListItem className={classes.listItem}>
-          <ListItemText primary='Total' />
-          <Typography variant='subtitle1' className={classes.total}>
-            $34.06
-          </Typography>
-        </ListItem>
-      </List>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Typography variant='h6' gutterBottom className={classes.title}>
-            Shipping
-          </Typography>
-          <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>{addresses.join(', ')}</Typography>
-        </Grid>
-        <Grid item container direction='column' xs={12} sm={6}>
-          <Typography variant='h6' gutterBottom className={classes.title}>
-            Payment details
-          </Typography>
-          <Grid container>
-            {payments.map((payment) => (
-              <React.Fragment key={payment.name}>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.name}</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.detail}</Typography>
-                </Grid>
-              </React.Fragment>
-            ))}
-          </Grid>
-        </Grid>
+    <Grid container spacing={3}>
+      <Grid item xs={12} sm={12}>
+        <Typography variant='h6' gutterBottom>
+          Plano do Diário de Bordo
+        </Typography>
+        <List disablePadding>
+          {
+            plans.map((plan) => (
+              <List
+                key={plan}
+                component='nav'
+                aria-labelledby='nested-list-subheader'
+                className={classes.root}
+              >
+                <ListItem button>
+                  <ListItemIcon>
+                    <LabelImportantIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={plan.description + ' em ' + plan.planet.name} />
+                </ListItem>
+              </List>
+            ))
+          }
+        </List>
       </Grid>
-    </>
+    </Grid>
   )
 }
 

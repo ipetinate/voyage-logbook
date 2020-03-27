@@ -70,10 +70,10 @@ export default function AddPlanets () {
                 <Grid container spacing={2}>
                   <Grid item xs={11} sm={11} zeroMinWidth>
                     <Typography>
-                      Planeta: {plan.planet.name}
+                      Descrição: {plan.description}
                     </Typography>
                     <Typography>
-                      Descrição: {plan.description}
+                      Planeta: {plan.planet.name}
                     </Typography>
                   </Grid>
                   <Grid item xs={1} sm={1}>

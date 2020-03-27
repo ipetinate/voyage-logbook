@@ -103,7 +103,7 @@ export default function Checkout () {
                 <div className={classes.buttons}>
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} className={classes.button}>
-                      Back
+                      Voltar
                     </Button>
                   )}
                   <Button
@@ -112,7 +112,7 @@ export default function Checkout () {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Concluir' : 'Próximo'}
                   </Button>
                 </div>
               </>
