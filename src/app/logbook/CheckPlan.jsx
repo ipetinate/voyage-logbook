@@ -14,9 +14,8 @@ import LocalStorageService from '../../services/local-storage.service'
 import LOCAL_STORAGE_KEY from '../../dictionaries/local-storage.dictionary'
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  list: {
     width: '100%',
-    maxWidth: 360,
     backgroundColor: theme.palette.background.paper
   },
   nested: {
@@ -49,7 +48,7 @@ const CheckPlan = () => {
                 key={plan}
                 component='nav'
                 aria-labelledby='nested-list-subheader'
-                className={classes.root}
+                className={classes.list}
               >
                 <ListItem button>
                   <ListItemIcon>
