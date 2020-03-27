@@ -3,19 +3,19 @@ import PropTypes from 'prop-types'
 // React Router DOM
 import { Link } from 'react-router-dom'
 // Material UI
-import Avatar from '@material-ui/core/Avatar'
+import Fab from '@material-ui/core/Fab'
 import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
+import Menu from '@material-ui/core/Menu'
+import Zoom from '@material-ui/core/Zoom'
+import Avatar from '@material-ui/core/Avatar'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
 import MoreIcon from '@material-ui/icons/MoreVert'
-import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import Zoom from '@material-ui/core/Zoom'
-import Fab from '@material-ui/core/Fab'
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
+import IconButton from '@material-ui/core/IconButton'
+import Typography from '@material-ui/core/Typography'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 import { makeStyles } from '@material-ui/core/styles'
 // Files/Images
 import logo from '../../assets/icons/spaceship.svg'
@@ -114,11 +114,21 @@ const AppToolbar = (props) => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <Link to='/' onClick={() => handleClose}>
-              <MenuItem>Página Inicial</MenuItem>
+            <Link
+              to='/'
+              onClick={() => handleClose}
+            >
+              <MenuItem>
+                Página Inicial
+              </MenuItem>
             </Link>
-            <Link to='/easter-egg' onClick={() => handleClose}>
-              <MenuItem>Não clique aqui! :D</MenuItem>
+            <Link
+              to='/easter-egg'
+              onClick={() => handleClose}
+            >
+              <MenuItem>
+                Não clique aqui! :P
+              </MenuItem>
             </Link>
           </Menu>
         </AppBar>
