@@ -1,5 +1,9 @@
 # voyage-logbook
-Diário de Bordo da Viagem Intergaláctica. 
+Diário de Bordo da Viagem Intergaláctica.
+
+### Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9576dd88-4570-464e-95ae-eef695f6b0e5/deploy-status)](https://app.netlify.com/sites/voyage-logbook/deploys)
 
 
 ## Scripts Disponíveis
