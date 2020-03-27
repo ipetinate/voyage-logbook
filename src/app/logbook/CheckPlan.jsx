@@ -37,7 +37,7 @@ const CheckPlan = () => {
   }, [])
 
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={1}>
       <Grid item xs={12} sm={12}>
         <Typography variant='h6' gutterBottom>
           Plano do Diário de Bordo

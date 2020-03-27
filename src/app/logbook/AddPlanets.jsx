@@ -68,7 +68,7 @@ export default function AddPlanets () {
             plans.map((plan, index) =>
               <Paper key={index} className={classes.paper}>
                 <Grid container spacing={2}>
-                  <Grid item xs={11} sm={11} zeroMinWidth>
+                  <Grid item xs={10} sm={11} zeroMinWidth>
                     <Typography>
                       Descrição: {plan.description}
                     </Typography>
@@ -76,7 +76,7 @@ export default function AddPlanets () {
                       Planeta: {plan.planet.name}
                     </Typography>
                   </Grid>
-                  <Grid item xs={1} sm={1}>
+                  <Grid item xs={2} sm={1}>
                     <IconButton edge='start' color='inherit' aria-label='open drawer'>
                       <DeleteForeverIcon onClick={() => deletePlan(plan)} color='primary' />
                     </IconButton>

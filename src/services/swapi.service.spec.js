@@ -5,27 +5,27 @@ import SwapiService from './swapi.service'
 
 import Endpoints from '../dictionaries/endpoints.dictionary'
 
-import { peopleOne } from '../constants/people-data.constant'
+import { planets } from '../constants/planets-data.constant'
 
 jest.mock('axios')
 
 describe('SwapiService', () => {
   const service = new SwapiService()
-  const data = peopleOne
+  const data = planets
 
-  test('Deve requisitar os dados da API do enpoint "People"', async () => {
-    const endpoint = Endpoints.get('PEOPLE')
+  test('Deve requisitar os dados da API no enpoint "Planets"', async () => {
+    const endpoint = Endpoints.get('PLANETS')
 
-    mockAxios.get.mockImplementationOnce(() => Promise.resolve(data))
+    mockAxios.get.mockImplementationOnce(() => Promise.resolve(data.results))
 
-    await service.getAll(endpoint).then(x => expect(x).toEqual(data))
-    expect(mockAxios.get).toHaveBeenCalledWith(
+    service.getAll(endpoint).then(x => expect(x).toEqual(data.results))
+    await expect(mockAxios.get).toHaveBeenCalledWith(
       `${endpoint}`
     )
   })
 
-  test('Deve requisitar os dados da API do enpoint "People" por ID', async () => {
-    const endpoint = Endpoints.get('PEOPLE')
+  test('Deve requisitar os dados da API do enpoint "Planets" por ID', async () => {
+    const endpoint = Endpoints.get('PLANETS')
     const id = 'asdsd'
 
     mockAxios.get.mockImplementationOnce(() => Promise.resolve(data))
