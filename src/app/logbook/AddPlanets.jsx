@@ -38,10 +38,12 @@ export default function AddPlanets () {
 
   useEffect(() => {
     setPlans(localStorageService.read(KEY) || [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
     savePlansLocal(plans)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [plans])
 
   const deletePlan = (item) => {

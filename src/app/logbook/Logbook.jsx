@@ -89,6 +89,7 @@ export default function Checkout () {
 
   useEffect(() => {
     setPlans(localStorageService.read(KEY) || [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleNext = () => {

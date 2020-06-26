@@ -33,6 +33,7 @@ const CheckPlan = () => {
 
   useEffect(() => {
     setPlans(localStorageService.read(KEY) || [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

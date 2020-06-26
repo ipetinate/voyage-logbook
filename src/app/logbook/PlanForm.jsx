@@ -29,6 +29,7 @@ const PlanForm = ({ onSubmit }) => {
       const data = await swapiService.getAll(ENDPOINT)
       setPlanets(data)
     })()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const addPlan = () => onSubmit({ description, planet })
