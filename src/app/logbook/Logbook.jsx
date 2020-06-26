@@ -72,13 +72,13 @@ const stepsDictionary = new Map([
   [1, <CheckPlan />]
 ])
 
-function getStepContent (step) {
+function getStepContent(step) {
   if (stepsDictionary.has(step)) {
     return stepsDictionary.get(step)
   }
 }
 
-export default function Checkout () {
+export default function Checkout() {
   const classes = useStyles()
   const [activeStep, setActiveStep] = React.useState(0)
 
@@ -102,7 +102,7 @@ export default function Checkout () {
 
   const handleTextToFile = () => {
     let text = '>> Planos | Diário de Bordo - Relatório << \n\n'
-    plans.map(x => { text += `\n > ${x.description} em ${x.planet.name} \n` })
+    plans.map(x => (text += `\n > ${x.description} em ${x.planet.name} \n`))
     return text
   }
 
@@ -171,25 +171,25 @@ export default function Checkout () {
                 </Typography>
               </div>
             ) : (
-              <>
-                {getStepContent(activeStep)}
-                <div className={classes.buttons}>
-                  {activeStep !== 0 && (
-                    <Button onClick={handleBack} className={classes.button}>
-                      Voltar
+                <>
+                  {getStepContent(activeStep)}
+                  <div className={classes.buttons}>
+                    {activeStep !== 0 && (
+                      <Button onClick={handleBack} className={classes.button}>
+                        Voltar
+                      </Button>
+                    )}
+                    <Button
+                      variant='contained'
+                      color='primary'
+                      onClick={handleNext}
+                      className={classes.button}
+                    >
+                      {activeStep === steps.length - 1 ? 'Concluir' : 'Próximo'}
                     </Button>
-                  )}
-                  <Button
-                    variant='contained'
-                    color='primary'
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {activeStep === steps.length - 1 ? 'Concluir' : 'Próximo'}
-                  </Button>
-                </div>
-              </>
-            )}
+                  </div>
+                </>
+              )}
           </>
         </Paper>
         <Copyright />
